@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: black;
+    overflow: hidden;
+}
+
+.menu {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 120px;
+    overflow: hidden;
+    background: black;
+    z-index: 2000;
+    animation: fullAnimate 4s linear infinite;
+}
+
+#under,
+#border,
+#full {
+    position: relative;
+    width: 100px;
+    height: 110px;
+    margin: 2px;
+    background: #111;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    color: white;
+    border: none;
+}
+
+#under:before,
+#border:before,
+#full:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    pointer-events: none;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+#under:hover,
+#border:hover,
+#full:hover {
+    transition: 0s;
+    background: limegreen;
+}
+
+#under:focus,
+#border:focus, 
+#full:focus {
+    outline: none;
+}
+
+
+.container,
+.container2,
+.container3 {
+    position: relative;
+    height: 600px;
+    overflow: hidden;
+}
+
+.container {
+    z-index: 2;
+}
+
+.container2 {
+    animation: borderAnimate 4s linear infinite;
+}
+
+.container3 {
+    animation: fullAnimate 4s linear infinite;
+}
+
+.row,
+.row2,
+.row3 {
+    display: inline-flex;
+    margin-top: -32px;
+    margin-left: -50px;
+}
+
+.row:nth-child(even),
+.row2:nth-child(even), 
+.row3:nth-child(even) {
+    margin-left: 1px;
+}
+
+.hexagon,
+.hexagon2,
+.hexagon3 {
+    position: relative;
+    width: 100px;
+    height: 110px;
+    margin: 2px;
+    background: #111;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    transition: 2s;
+}
+
+.hexagon3 {
+    margin: 1px;
+}
+
+.hexagon2:hover,
+.hexagon3:hover {
+    transition: 0s;
+    background: limegreen;
+}
+
+.hexagon:before,
+.hexagon2:before,
+.hexagon3:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    pointer-events: none;
+    background: rgba(255, 255, 255, 0.02);
+    z-index: 100;
+}
+
+.hexagon2:after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    bottom: 4px;
+    left: 4px;
+    background: #111;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    z-index: 1;
+}
+
+#cursor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 400px;
+    width: 400px;
+    background: limegreen;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: underAnimate 4s linear infinite;
+    z-index: 1;
+}
+
+@keyframes underAnimate {
+    0% {
+        filter: hue-rotate(0deg) blur(50px);
+    }
+    100% {
+        filter: hue-rotate(360deg) blur(50px);
+    }
+}
+
+@keyframes borderAnimate {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+@keyframes fullAnimate {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
