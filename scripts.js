@@ -75,6 +75,31 @@ let buildRainDemo = () => {
     demoContainer.innerHTML = `<div class="rain-container"><section></section></div>`;
 }
 
+//Build Cube Demo
+let buildCubeDemo = (demoNumber) => {
+    demoContainer.innerHTML = `<div class="cube-container"><div class="container${demoNumber}"></div></div>`;
+    let cubeContainer = document.querySelector(`.container${demoNumber}`);
+    let rows = `<div class="row${demoNumber}"></div>`;
+    let cubes = `<div class="cube${demoNumber}"></div>`;
+    let spans = `<span></span><span></span><span></span>`;
+
+    for(let i = 0; i <= 3; i++){
+        rows += rows;
+        cubes += cubes;
+    }
+
+    cubeContainer.innerHTML = rows;
+    rows = document.querySelectorAll(`.row${demoNumber}`);
+    rows.forEach(r => {
+        r.innerHTML = cubes;
+    });
+    cubes = document.querySelectorAll(`.cube${demoNumber}`);
+    cubes.forEach(c => {
+        c.innerHTML = spans;
+    })
+
+}
+
 //Event Listeners for Menu Buttons
 document.querySelector('#under').addEventListener("click", () => {
     buildHexagonDemo("");
@@ -98,4 +123,8 @@ document.querySelector('#banner').addEventListener("click", () => {
 
 document.querySelector('#rain').addEventListener("click", () => {
     buildRainDemo();
+});
+
+document.querySelector('#cube').addEventListener("click", () => {
+    buildCubeDemo("4");
 });
