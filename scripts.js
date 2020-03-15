@@ -100,6 +100,14 @@ let buildCubeDemo = (demoNumber) => {
 
 }
 
+//Build Fluid Demo
+let buildFluidDemo = () => {
+    demoContainer.innerHTML = `<canvas></canvas>`;
+    useFluidSimulation();
+    
+}
+
+
 //Event Listeners for Menu Buttons
 document.querySelector('#under').addEventListener("click", () => {
     buildHexagonDemo("");
@@ -127,4 +135,8 @@ document.querySelector('#rain').addEventListener("click", () => {
 
 document.querySelector('#cube').addEventListener("click", () => {
     buildCubeDemo("4");
+});
+
+document.querySelector('#fluid').addEventListener("click", () => {
+    buildFluidDemo();
 });

@@ -36,7 +36,8 @@ body {
 #circle,
 #banner,
 #rain,
-#cube {
+#cube,
+#fluid {
     position: relative;
     width: 100px;
     height: 110px;
@@ -67,11 +68,17 @@ body {
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 50% 50%, 0% 25%);
 }
 
+#fluid {
+    height: 100px;
+    clip-path: polygon(0 29%, 7% 19%, 18% 9%, 30% 2%, 40% 0, 71% 0, 80% 7%, 88% 13%, 93% 21%, 96% 29%, 98% 37%, 100% 46%, 100% 60%, 99% 67%, 94% 78%, 85% 88%, 74% 95%, 62% 98%, 38% 100%, 59% 91%, 67% 85%, 70% 78%, 68% 71%, 63% 66%, 55% 66%, 51% 67%, 46% 70%, 41% 74%, 35% 80%, 30% 85%, 25% 90%, 19% 95%, 13% 98%, 5% 99%, 0% 100%);
+}
+
 #under:before,
 #border:before,
 #full:before,
 #circle:before,
-#rain:before {
+#rain:before,
+#fluid:before {
     content: '';
     position: absolute;
     top: 0;
@@ -99,7 +106,8 @@ body {
 #circle:hover,
 #banner:hover,
 #rain:hover,
-#cube:hover {
+#cube:hover,
+#fluid:hover {
     transition: 0s;
     background: limegreen;
 }
@@ -110,7 +118,8 @@ body {
 #circle:focus,
 #banner:focus,
 #rain:focus,
-#cube:focus {
+#cube:focus,
+#fluid:focus {
     outline: none;
 }
 
@@ -565,3 +574,12 @@ section div h2 {
         filter: hue-rotate(360deg);
     }
 }
+
+/* Fluid Demo */
+canvas {
+    position: absolute;
+    width: 100%;
+    height: 600px;
+    background: black;
+}
+
