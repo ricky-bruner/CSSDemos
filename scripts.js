@@ -1,45 +1,4 @@
-// let rows = `<div class="row"></div>`;
-// let rows2 = `<div class="row2"></div>`;
-// let rows3 = `<div class="row3"></div>`;
-// let hexagons = `<div class="hexagon"></div>`;
-// let hexagons2 = `<div class="hexagon2"></div>`;
-// let hexagons3 = `<div class="hexagon3"></div>`;
-// let container = document.querySelector('.container');
-// let container2 = document.querySelector('.container2');
-// let container3 = document.querySelector('.container3');
-
-
-// for(let i = 0; i <= 3; i++){
-//     rows += rows;
-//     rows2 += rows2;
-//     rows3 += rows3;
-// }
-
-// for(let i = 0; i <= 3; i++){
-//     hexagons += hexagons;
-//     hexagons2 += hexagons2;
-//     hexagons3 += hexagons3;
-// }
-
-// container.innerHTML += rows;
-// domRows = document.querySelectorAll('.row');
-// domRows.forEach(r => {
-//     r.innerHTML = hexagons;
-// });
-
-// container2.innerHTML += rows2;
-// domRows2 = document.querySelectorAll('.row2');
-// domRows2.forEach(r => {
-//     r.innerHTML = hexagons2;
-// });
-
-// container3.innerHTML += rows3;
-// domRows3 = document.querySelectorAll('.row3');
-// domRows3.forEach(r => {
-//     r.innerHTML = hexagons3;
-// });
-
-
+//For Hover Hexagon Demo
 let buildCursor = (demoContainer, container) => {
     demoContainer.innerHTML += `<div id="cursor"></div>`;
     let cursor = document.getElementById("cursor");
@@ -49,6 +8,7 @@ let buildCursor = (demoContainer, container) => {
     });
 }
 
+//Building Hexagon Demos
 let buildDemo = (demoNumber) => {
     let demoContainer = document.querySelector('.demoContainer');
     demoContainer.innerHTML = `<div class="container${demoNumber}"></div>`;
@@ -72,6 +32,8 @@ let buildDemo = (demoNumber) => {
     }
 }
 
+
+//Event Listeners for Menu Buttons
 document.querySelector('#under').addEventListener("click", () => {
     buildDemo("");
 });
