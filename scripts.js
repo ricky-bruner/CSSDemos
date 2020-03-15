@@ -68,9 +68,12 @@ let buildScrollingBannerDemo = () => {
     h2s.forEach(h => {
         h.innerText = lorem;
     })
-
 }
 
+//Build Rain Demo
+let buildRainDemo = () => {
+    demoContainer.innerHTML = `<div class="rain-container"><section></section></div>`;
+}
 
 //Event Listeners for Menu Buttons
 document.querySelector('#under').addEventListener("click", () => {
@@ -91,4 +94,8 @@ document.querySelector('#circle').addEventListener("click", () => {
 
 document.querySelector('#banner').addEventListener("click", () => {
     buildScrollingBannerDemo();
+});
+
+document.querySelector('#rain').addEventListener("click", () => {
+    buildRainDemo();
 });
