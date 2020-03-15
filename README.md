@@ -1,4 +1,4 @@
-### CSS Demos
+# CSS Demos
 This Repo features modified code from the Udemy Course: 
 
 [Next Level CSS Creative Hover & Animation Effects](https://www.udemy.com/course/css-hover-animation-effects-from-beginners-to-expert/)
