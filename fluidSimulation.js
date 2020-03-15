@@ -23,6 +23,8 @@ SOFTWARE.
 */
 
 'use strict';
+
+//I have made this page into a method so that this code will run when the Demo loads.
 let useFluidSimulation = () => {
     const canvas = document.getElementsByTagName('canvas')[0];
     resizeCanvas();

@@ -1,3 +1,23 @@
+/* ------------------------------- Stylesheet Documentation ------------------------------- */
+/* 
+
+This file is rather lengthy, but contains all of the CSS code from the udemy course this work was completed for: 
+
+https://www.udemy.com/course/css-hover-animation-effects-from-beginners-to-expert/ 
+
+
+I have made several modifications to the code provided in the course in order to get them all onto one hostable html page. Below the code is broken out into each demo section, which can be navigated to by searching the following:
+
+1. Hexagon Demos
+2. Wavy Circles Demo
+3. Scrolling Text Demo
+4. Rain Demo
+5. Cube Demo
+6. Fluid Demo
+7. Split Image Demo
+
+*/
+
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900&display=swap");
 
 :root {
@@ -13,7 +33,6 @@
 body {
     min-height: 100vh;
     background: black;
-    overflow: hidden;
 }
 
 .menu {
@@ -29,15 +48,11 @@ body {
     animation: fullAnimate 4s linear infinite;
 }
 
+/* --------------------------------------------------------------------------------------- */
 /* Buttons */
-#under,
-#border,
-#full,
-#circle,
-#banner,
-#rain,
-#cube,
-#fluid {
+/* --------------------------------------------------------------------------------------- */
+
+.menu button {
     position: relative;
     width: 100px;
     height: 110px;
@@ -54,8 +69,7 @@ body {
 }
 
 #rain {
-    height: 100px;
-    clip-path: polygon(50% 0, 15% 60%, 16% 74%, 20% 84%, 26% 92%, 34% 100%, 66% 100%, 74% 92%, 80% 84%, 84% 74%, 85% 60%);
+    clip-path: polygon(29% 1%, 40% 35%, 15% 60%, 15% 85%, 35% 100%, 65% 100%, 85% 85%, 85% 60%, 70% 35%);
 }
 
 #banner {
@@ -65,12 +79,16 @@ body {
 
 #cube {
     height: 100px;
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 50% 50%, 0% 25%);
+    clip-path: polygon(50% 0, 0 25%, 50% 50%, 50% 95%, 0 75%, 50% 100%, 100% 75%, 100% 25%, 50% 50%, 99% 24%);
 }
 
 #fluid {
     height: 100px;
-    clip-path: polygon(0 29%, 7% 19%, 18% 9%, 30% 2%, 40% 0, 71% 0, 80% 7%, 88% 13%, 93% 21%, 96% 29%, 98% 37%, 100% 46%, 100% 60%, 99% 67%, 94% 78%, 85% 88%, 74% 95%, 62% 98%, 38% 100%, 59% 91%, 67% 85%, 70% 78%, 68% 71%, 63% 66%, 55% 66%, 51% 67%, 46% 70%, 41% 74%, 35% 80%, 30% 85%, 25% 90%, 19% 95%, 13% 98%, 5% 99%, 0% 100%);
+    clip-path: polygon(0 50%, 30% 25%, 100% 0, 100% 0, 65% 25%, 60% 50%, 70% 65%, 100% 75%, 100% 100%, 0 100%);
+}
+
+#split {
+    clip-path: polygon(39% 1%, 9% 28%, 33% 27%, 10% 58%, 35% 57%, 17% 100%, 85% 35%, 61% 34%, 93% 0);
 }
 
 #under:before,
@@ -78,7 +96,8 @@ body {
 #full:before,
 #circle:before,
 #rain:before,
-#fluid:before {
+#fluid:before,
+#split:before {
     content: '';
     position: absolute;
     top: 0;
@@ -100,28 +119,18 @@ body {
     background: rgba(255, 255, 255, 0.02);
 }
 
-#under:hover,
-#border:hover,
-#full:hover,
-#circle:hover,
-#banner:hover,
-#rain:hover,
-#cube:hover,
-#fluid:hover {
+.menu button:hover {
     transition: 0s;
     background: limegreen;
 }
 
-#under:focus,
-#border:focus, 
-#full:focus,
-#circle:focus,
-#banner:focus,
-#rain:focus,
-#cube:focus,
-#fluid:focus {
+.menu button:focus {
     outline: none;
 }
+
+/* --------------------------------------------------------------------------------------- */
+/* 1. Hexagon Demos */
+/* --------------------------------------------------------------------------------------- */
 
 .container,
 .container2,
@@ -245,13 +254,17 @@ body {
     }
 }
 
-/* Wavy Circles Demo */
+/* --------------------------------------------------------------------------------------- */
+/* 2. Wavy Circles Demo */
+/* --------------------------------------------------------------------------------------- */
+
 .wavy-body {
     display: flex;
     justify-content: center;
     align-items: center;
     background: #89179e;
     height: 600px;
+    overflow: hidden;
 }
 
 .loader {
@@ -396,14 +409,17 @@ body {
     }
 }
 
-/* Scrolling Text Demo */
-.scrolling-text {
+/* --------------------------------------------------------------------------------------- */
+/* 3. Scrolling Text Demo */
+/* --------------------------------------------------------------------------------------- */
 
+.scrolling-text {
     background: white;
     height: 600px;
+    overflow: hidden;
 }
 
-section {
+.scrolling-text section {
     position: relative;
     display: flex;
     width: 100%;
@@ -411,19 +427,19 @@ section {
     overflow: hidden;
 }
 
-section div {
+.scrolling-text section div {
     position: relative;
     width: 50%;
     background: #20506b;
     overflow: hidden;
 }
 
-section div:nth-child(1) {
+.scrolling-text section div:nth-child(1) {
     background: url("https://images.unsplash.com/photo-1515816052601-210d5501d471?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1334&q=80");
     background-size: cover;
 }
 
-section div:nth-child(1) h2 {
+.scrolling-text section div:nth-child(1) h2 {
     -webkit-text-stroke: 2px;
     -webkit-text-stroke-color: white;
     -webkit-text-fill-color: transparent;
@@ -431,7 +447,7 @@ section div:nth-child(1) h2 {
 
 }
 
-section div h2 {
+.scrolling-text section div h2 {
     position: absolute;
     white-space: nowrap;
     font-size: 12em;
@@ -449,7 +465,14 @@ section div h2 {
     }
 }
 
-/* Rain Demo */
+/* --------------------------------------------------------------------------------------- */
+/* 4. Rain Demo */
+/* --------------------------------------------------------------------------------------- */
+
+.rain-container {
+    overflow: hidden;
+}
+
 .rain-container section {
     position: relative;
     width: 100%;
@@ -467,7 +490,7 @@ section div h2 {
     left: 0;
     width: 100%;
     height: 600px;
-    background: url("https://a.udemycdn.com/2020-01-01_13-59-17-d662ce1308d8e16506632b53e36b146f/original.png?nva=20200315073051&token=07cb08fee08c9b5bf4843");
+    background: url("rain.png");
     animation: rainAnimate .2s linear infinite;
 }
 
@@ -489,7 +512,10 @@ section div h2 {
     }
 }
 
-/* Cube Demos */
+/* --------------------------------------------------------------------------------------- */
+/* 5. Cube Demo */
+/* --------------------------------------------------------------------------------------- */
+
 .container4 {
     position: relative;
     height: 600px;
@@ -575,11 +601,53 @@ section div h2 {
     }
 }
 
-/* Fluid Demo */
+/* --------------------------------------------------------------------------------------- */
+/* 6. Fluid Demo */
+/* --------------------------------------------------------------------------------------- */
+
 canvas {
     position: absolute;
     width: 100%;
     height: 600px;
     background: black;
+    overflow: hidden;
 }
 
+/* --------------------------------------------------------------------------------------- */
+/* 7. Split Image Demo */
+/* --------------------------------------------------------------------------------------- */
+
+.split-container {
+    position: relative;
+    width: 100%;
+    height: 1200px;
+    background: white;
+    overflow: scroll;
+    background: black;
+}
+
+.split-container section {
+    position: fixed;
+    top: 120px;
+    left: 0;
+    width: 100%;
+    height: 600px;
+}
+
+.split-container section .side {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("https://images.unsplash.com/photo-1533462506003-13c20d204b58?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80");
+    background-size: cover;
+}
+
+#side1 {
+    clip-path: polygon(57% 0, 28% 43%, 63% 31%, 24% 73%, 54% 66%, 31% 100%, 0% 100%, 0% 0%);
+}
+
+#side2 {
+    clip-path: polygon(57% 0, 28% 43%, 63% 31%, 24% 73%, 54% 66%, 31% 100%, 100% 100%, 100% 0);
+}
