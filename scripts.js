@@ -24,6 +24,15 @@ the Fluid Demo. That is the only modification I have made to that file.
 
 let demoContainer = document.querySelector('.demoContainer');
 
+//For getting rid of Fluid Sim Menu
+let removeFluidMenu = () => {
+    let menu = document.querySelector(".dg.ac");
+
+    if(menu !== null){
+        menu.innerHTML = ``;
+    }
+}
+
 //For Hover Hexagon Demo
 let buildHexagonCursor = () => {
     demoContainer.innerHTML += `<div id="cursor"></div>`;
@@ -39,6 +48,7 @@ let buildHexagonCursor = () => {
 //Build Hexagon Demos
 let buildHexagonDemo = (demoNumber) => {   
     demoContainer.innerHTML = `<div class="container${demoNumber}"></div>`;
+    removeFluidMenu();
 
     let container = document.querySelector(`.container${demoNumber}`);
     let rows = `<div class="row${demoNumber}"></div>`;
@@ -65,6 +75,7 @@ let buildHexagonDemo = (demoNumber) => {
 //Build Wave Circles Demo
 let buildWavyCirclesDemo = () => {
     demoContainer.innerHTML = `<div class="wavy-body"><div class="loader"></div></div>`;
+    removeFluidMenu();
 
     let loader = document.querySelector('.loader');
     let spans = `<span></span>`;
@@ -79,6 +90,7 @@ let buildWavyCirclesDemo = () => {
 //Build Scrolling Text Demo
 let buildScrollingBannerDemo = () => {
     demoContainer.innerHTML = `<div class="scrolling-text"><section></section></div>`;
+    removeFluidMenu();
 
     let divs = `<div class="section-div"></div>`;
     let h2s = `<h2></h2>`;
@@ -108,11 +120,13 @@ let buildScrollingBannerDemo = () => {
 //Build Rain Demo
 let buildRainDemo = () => {
     demoContainer.innerHTML = `<div class="rain-container"><section></section></div>`;
+    removeFluidMenu();
 }
 
 //Build Cube Demo
 let buildCubeDemo = (demoNumber) => {
     demoContainer.innerHTML = `<div class="cube-container"><div class="container${demoNumber}"></div></div>`;
+    removeFluidMenu();
     
     let cubeContainer = document.querySelector(`.container${demoNumber}`);
     let rows = `<div class="row${demoNumber}"></div>`;
@@ -142,13 +156,7 @@ let buildCubeDemo = (demoNumber) => {
 //Build Fluid Demo
 let buildFluidDemo = () => {
     demoContainer.innerHTML = `<canvas></canvas>`;
-    
-    let menu = document.querySelector(".dg.ac");
-    
-    if(menu !== null){
-        menu.innerHTML = ``;
-    }
-
+    removeFluidMenu();
     useFluidSimulation();
 
     document.querySelector(".close-button").addEventListener("click", () => {
@@ -159,6 +167,7 @@ let buildFluidDemo = () => {
 //Build Split Demo
 let buildSplitDemo = () => {
     demoContainer.innerHTML = `<div class="split-container"><section><div class="side" id="side1"></div><div class="side" id="side2"></div></section></div>`;
+    removeFluidMenu();
 
     let side1 = document.querySelector("#side1");
     let side2 = document.querySelector("#side2");
