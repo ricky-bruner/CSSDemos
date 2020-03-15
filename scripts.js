@@ -1,5 +1,7 @@
+let demoContainer = document.querySelector('.demoContainer');
+
 //For Hover Hexagon Demo
-let buildCursor = (demoContainer, container) => {
+let buildHexagonCursor = () => {
     demoContainer.innerHTML += `<div id="cursor"></div>`;
     let cursor = document.getElementById("cursor");
     demoContainer.addEventListener('mousemove', function(e){
@@ -8,9 +10,8 @@ let buildCursor = (demoContainer, container) => {
     });
 }
 
-//Building Hexagon Demos
-let buildDemo = (demoNumber) => {
-    let demoContainer = document.querySelector('.demoContainer');
+//Build Hexagon Demos
+let buildHexagonDemo = (demoNumber) => {   
     demoContainer.innerHTML = `<div class="container${demoNumber}"></div>`;
     let container = document.querySelector(`.container${demoNumber}`);
     let rows = `<div class="row${demoNumber}"></div>`;
@@ -28,20 +29,40 @@ let buildDemo = (demoNumber) => {
     });
 
     if(demoNumber === ""){
-        buildCursor(demoContainer, container);
+        buildHexagonCursor();
     }
 }
 
+//Build Wave Circles Demo
+let buildWavyCirclesDemo = () => {
+    demoContainer.innerHTML = `<div class="wavy-body"><div class="loader"></div></div>`;
+    let loader = document.querySelector('.loader');
+    let spans = `<span></span>`;
+
+    for(let i = 0; i <= 13; i++){
+        spans += `<span></span>`;
+    }
+
+    loader.innerHTML = spans;
+}
 
 //Event Listeners for Menu Buttons
 document.querySelector('#under').addEventListener("click", () => {
-    buildDemo("");
+    buildHexagonDemo("");
 });
 
 document.querySelector('#border').addEventListener("click", () => {
-    buildDemo("2");
+    buildHexagonDemo("2");
 });
 
 document.querySelector('#full').addEventListener("click", () => {
-    buildDemo("3");
-})
+    buildHexagonDemo("3");
+});
+
+document.querySelector('#circle').addEventListener("click", () => {
+    buildWavyCirclesDemo();
+});
+
+document.querySelector('#banner').addEventListener("click", () => {
+    buildScrollingBannerDemo();
+});
